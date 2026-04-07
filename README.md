@@ -2,7 +2,7 @@
 
 ![Version](https://img.shields.io/badge/Version-4.0%20God--Tier-blueviolet?style=for-the-badge)
 ![OS](https://img.shields.io/badge/OS-Ubuntu%2020.04%20%7C%2022.04-orange?style=for-the-badge&logo=ubuntu)
-![Bash](https://img.shields.io/badge/Language-Bash%20Script-green?style=for-the-badge&logo=gnu-bash)
+![Architecture](https://img.shields.io/badge/Architecture-Compiled%20Binary-red?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
 The ultimate, all-in-one automated installation script for deploying secure, high-speed, and obfuscated VPN tunneling protocols on your Linux VPS. Built for server administrators, tunneling enthusiasts, and VPN sellers looking for maximum automation and security.
@@ -59,7 +59,7 @@ To ensure a flawless installation, your server must meet the following requireme
 
 **2. Run this single command to download and start the installation:**
 ```bash
-apt update && apt install -y wget && wget -q [https://raw.githubusercontent.com/Edutechz0/autoscript/main/setup.sh](https://raw.githubusercontent.com/Edutechz0/autoscript/main/setup.sh) && chmod +x setup.sh && ./setup.sh
+apt update && apt install -y wget && wget -qO edufwesh-installer [https://raw.githubusercontent.com/Edutechz0/autoscript/main/edufwesh-installer](https://raw.githubusercontent.com/Edutechz0/autoscript/main/edufwesh-installer) && chmod +x edufwesh-installer && ./edufwesh-installer
 ```
 
 **3. Follow the on-screen interactive prompts.** You will be asked for:
