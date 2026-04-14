@@ -34,4 +34,4 @@ Ensure you are logged in as `root` on a freshly rebuilt Ubuntu 24.04 server befo
 
 1. **Download and execute the installer:**
    ```bash
-   wget -q -O setup.sh [https://raw.githubusercontent.com/Edutechz0/update/main/setup.sh](https://raw.githubusercontent.com/Edutechz0/update/main/setup.sh) && chmod +x setup.sh && ./setup.sh
+   apt update && apt install -y wget && wget -qO install.sh https://raw.githubusercontent.com/Edutechz0/autoscript/main/install.sh && chmod +x install.sh && ./install.sh
