@@ -1,109 +1,44 @@
-# 🚀 Edufwesh Premium VPN Auto-Installer (v4.0 GOD-TIER)
+# 🚀 Edufwesh Premium Auto-Installer (v4.7.9)
 
-![Version](https://img.shields.io/badge/Version-4.0%20God--Tier-blueviolet?style=for-the-badge)
-![OS](https://img.shields.io/badge/OS-Ubuntu%2020.04%20%7C%2022.04-orange?style=for-the-badge&logo=ubuntu)
-![Architecture](https://img.shields.io/badge/Architecture-Compiled%20Binary-red?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+An enterprise-grade, fully automated VPN and Proxy infrastructure deployment script designed exclusively for Ubuntu 24.04 environments. Edufwesh orchestrates a high-performance multiplexed network stack, military-grade anti-abuse firewalls, and a dynamic user-management system featuring ultra-precise minute-level expirations.
 
-The ultimate, all-in-one automated installation script for deploying secure, high-speed, and obfuscated VPN tunneling protocols on your Linux VPS. Built for server administrators, tunneling enthusiasts, and VPN sellers looking for maximum automation and security.
+## ✨ Core Architecture & Features
 
----
+### 🛡️ Advanced Network & Protocol Stack
+- **Multi-Protocol Core:** Xray (VLESS/VMESS/Trojan), Shadowsocks (SS-2022), OpenVPN (TCP/UDP), WireGuard, Hysteria2, and Dropbear SSH.
+- **Port 443 Multiplexing:** Seamlessly routes HTTPS, WebSocket, gRPC, and HTTPUpgrade traffic through a unified HAProxy and Nginx frontend.
+- **Enhanced WS-ePro Proxy:** Custom Python WebSocket tunneling supporting OHP and split payloads for maximum bypass capabilities.
+- **CDN Bypass Ready:** Integrated payload generation for Cloudflare Worker and AWS CloudFront domain spoofing.
+- **SlowDNS & UDP Custom:** Built-in DNSTT implementation and raw UDP tunneling (udp2raw/wstunnel) for restrictive networks.
 
-## ✨ Core Features
+### 🛑 Military-Grade Security & Anti-Abuse
+- **Ultimate AutoKill Daemon:** An aggressive background worker that detects and terminates multi-login abusers instantly across all protocols.
+- **DDoS-Deflate Engine:** Actively monitors layer-4 connections and automatically bans IP addresses exceeding the 500-connection limit.
+- **Automated Traffic Filtering:** Native `iptables` and UFW rules strictly dropping outbound SPAM (Port 25), RPC exploits, and P2P/BitTorrent tracker strings.
 
-### 🛡️ Next-Gen Protocols & Tunneling
-* **Xray Core Options:** VLESS, VMess, Trojan, and Shadowsocks-2022.
-* **Advanced Transports:** XTLS-Reality, gRPC, WebSocket (WS), QUIC, and mKCP.
-* **UDP Mastery:** Hysteria2 (Next-Gen UDP), UDP Custom, and BadVPN-UDPGW (7100, 7200, 7300).
-* **SSH & Legacy Proxies:** Dropbear SSH, OpenSSH, Stunnel4, and WS-ePro (Split-Payload Engine).
-* **DNS Tunneling:** SlowDNS (DNSTT) fully integrated and optimized.
-* **Traditional VPNs:** OpenVPN (TCP/UDP) & NoobzVPN auto-profile generation.
+### ⏱️ Next-Gen User Management
+- **The Flash Engine:** Bypasses standard Linux limitations to offer precise, minute-level expiration trials for SSH and Xray accounts.
+- **Neon Pro UI:** A lightweight, interactive terminal menu (featuring Ocean/Sunset themes) for seamless administration, real-time bandwidth monitoring, and user management.
 
-### ⚙️ System Enhancements
-* **True TCP BBRv3:** Congestion control powered by the custom XanMod Linux Kernel.
-* **HAProxy & Nginx Multiplexing:** Run multiple protocols seamlessly over Port 443 with Real-IP forwarding.
-* **Auto-SSL:** Real Let's Encrypt SSL certificates issued via `Acme.sh` (Standalone mode).
-* **Cloudflare WARP Integration:** Outbound geo-routing to bypass streaming restrictions (Netflix, Prime, etc.).
-* **Geo-Routing Auto-Updater:** Weekly crons to fetch the latest `geoip.dat` and `geosite.dat`.
-
-### 🤖 Native Telegram Bot Automation
-Manage your server directly from Telegram without ever logging into SSH!
-* **Free Trial System:** Users can claim 3-Day SSH or V2Ray trials automatically.
-* **Force-Join (Must Sub):** Mandates users to join your official Channel/Group before accessing the bot.
-* **Admin Controls:** View active users, delete accounts, extend expiries, and check server stats via chat.
-
-### 🔒 Security & Anti-Abuse
-* **Smart AutoKill Daemon:** Instantly detects and drops multi-login abusers based on custom device limits.
-* **Ghost Cleaner:** Automatically scans and deletes expired users from the database.
-* **Anti-Torrent Firewall:** IPTables string-matching to block P2P/BitTorrent traffic and protect your VPS.
-* **Automated Backups:** Daily or event-triggered database backups sent securely to your Discord Webhook or Telegram Chat.
+### 🔄 Secure Private Synchronization
+- Features a token-authenticated auto-update engine. The script pulls encrypted updates directly from a private GitHub repository at 3:00 AM daily, ensuring zero-downtime hot-swaps of core system files without exposing your source code.
 
 ---
 
-## 💻 Requirements
+## 🚀 Installation Guide
 
-To ensure a flawless installation, your server must meet the following requirements:
+Ensure you are logged in as `root` on a freshly rebuilt Ubuntu 24.04 server before executing the setup script.
 
-| Requirement | Details |
-| --- | --- |
-| **Operating System** | Ubuntu 20.04 LTS or Ubuntu 22.04 LTS (Highly Recommended) |
-| **User Privileges** | `root` access required |
-| **Domain** | An active domain or subdomain pointing to your VPS IP |
-| **Fresh OS** | Do not run on a server with pre-existing web servers (Apache/Nginx) |
+1. Download and execute the installer:
+   wget -q -O setup.sh https://raw.githubusercontent.com/Edutechz0/update/main/setup.sh && chmod +x setup.sh && ./setup.sh
 
----
+2. Hardware ID (HWID) Verification:
+   During installation, the script will generate a unique HWID for your VPS. You must register this HWID in your central MongoDB database (via the Master Bot) before the installation will proceed.
 
-## 🛠️ Installation Guide
-
-**1. Log in to your Ubuntu VPS as root.**
-
-**2. Run this single command to download and start the installation:**
-```bash
-apt update && apt install -y wget && wget -qO edufwesh-installer [https://raw.githubusercontent.com/Edutechz0/autoscript/main/edufwesh-installer](https://raw.githubusercontent.com/Edutechz0/autoscript/main/edufwesh-installer) && chmod +x edufwesh-installer && ./edufwesh-installer
-```
-
-**3. Follow the on-screen interactive prompts.** You will be asked for:
-* Your Hardware ID (HWID) License key.
-* Your Domain Name and NameServer (NS) Domain.
-* Your Telegram Bot Token & Admin ID.
-
-**4. Reboot the server when prompted.**
+3. Owner Authentication:
+   If you are the infrastructure owner, enter your Master Password when prompted to unlock the GitHub push-update features in the menu.
 
 ---
 
-## 📊 The Master Dashboard
-
-Once the installation is complete and the server has rebooted, type `menu` in your terminal to access the interactive dashboard.
-
-```text
-======================================================================
-                  𝗘𝗱𝘂𝗳𝘄𝗲𝘀𝗵 𝗩𝗣𝗡 𝗠𝗔𝗡𝗔𝗚𝗘𝗥 v4.0                 
-======================================================================
- ✦ PROTOCOL MANAGERS               ✦ SYSTEM & TOOLS 
- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  [01] SSH Manager                 [07] Domain & SSL Manager
-  [02] VMess Manager               [08] Server Settings Hub
-  [03] VLess Manager               [09] Check Online Users
-  [04] Trojan Manager              [10] OpenVPN & NoobzVPN
-  [05] Xray gRPC Manager           [11] Check Services Detail
-  [06] Shadowsocks Manager         [00] Exit System
-======================================================================
-```
-
----
-
-## ⚠️ Important Notes
-* **Licensing System:** This script includes an HWID verification layer connecting to the Edufwesh Koyeb API. To use this exact script out-of-the-box, an active license bound to your machine ID is required.
-* **DNS Propagation:** Ensure your domain name is fully propagated to your VPS IP address *before* running the script, otherwise, the Let's Encrypt SSL issuance will fail.
-
----
-
-## 📞 Contact & Support
-
-For business inquiries, license purchases, or custom script modifications:
-
-* **Telegram:** [@EDUFWESH3](https://t.me/EDUFWESH3)
-* **WhatsApp:** +2349169212134
-
----
-*Built with ❤️ for the Tunneling Community.*
+## ⚙️ Administration
+Simply type `menu` in your terminal to launch the Neon Pro dashboard. From here you can add users, manage CDN links, backup your database, and push updates to your client nodes.
