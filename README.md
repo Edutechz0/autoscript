@@ -2,6 +2,8 @@
 
 An enterprise-grade, fully automated VPN and Proxy infrastructure deployment script designed exclusively for Ubuntu 24.04 environments. Edufwesh orchestrates a high-performance multiplexed network stack, military-grade anti-abuse firewalls, and a dynamic user-management system featuring ultra-precise minute-level expirations.
 
+---
+
 ## ✨ Core Architecture & Features
 
 ### 🛡️ Advanced Network & Protocol Stack
@@ -21,7 +23,8 @@ An enterprise-grade, fully automated VPN and Proxy infrastructure deployment scr
 - **Neon Pro UI:** A lightweight, interactive terminal menu (featuring Ocean/Sunset themes) for seamless administration, real-time bandwidth monitoring, and user management.
 
 ### 🔄 Secure Private Synchronization
-- Features a token-authenticated auto-update engine. The script pulls encrypted updates directly from a private GitHub repository at 3:00 AM daily, ensuring zero-downtime hot-swaps of core system files without exposing your source code.
+- **Authenticated Updates:** Features a token-authenticated auto-update engine. 
+- **Zero-Downtime:** The script pulls encrypted updates directly from the private `Edutechz0/update` repository at 3:00 AM daily, ensuring zero-downtime hot-swaps of core system files.
 
 ---
 
@@ -29,16 +32,6 @@ An enterprise-grade, fully automated VPN and Proxy infrastructure deployment scr
 
 Ensure you are logged in as `root` on a freshly rebuilt Ubuntu 24.04 server before executing the setup script.
 
-1. Download and execute the installer:
-   wget -q -O setup.sh https://raw.githubusercontent.com/Edutechz0/update/main/setup.sh && chmod +x setup.sh && ./setup.sh
-
-2. Hardware ID (HWID) Verification:
-   During installation, the script will generate a unique HWID for your VPS. You must register this HWID in your central MongoDB database (via the Master Bot) before the installation will proceed.
-
-3. Owner Authentication:
-   If you are the infrastructure owner, enter your Master Password when prompted to unlock the GitHub push-update features in the menu.
-
----
-
-## ⚙️ Administration
-Simply type `menu` in your terminal to launch the Neon Pro dashboard. From here you can add users, manage CDN links, backup your database, and push updates to your client nodes.
+1. **Download and execute the installer:**
+   ```bash
+   wget -q -O setup.sh [https://raw.githubusercontent.com/Edutechz0/update/main/setup.sh](https://raw.githubusercontent.com/Edutechz0/update/main/setup.sh) && chmod +x setup.sh && ./setup.sh
